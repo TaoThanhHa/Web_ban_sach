@@ -13,16 +13,16 @@ Website sẽ mang đến trải nghiệm mua sắm sách cá nhân hóa và ti�
   + Nhân Viên Hỗ Trợ Khách Hàng: Những người hỗ trợ khách hàng qua email, chat, hoặc điện thoại, giải đáp thắc mắc và xử lý các vấn đề liên quan đến đơn hàng.
 ## Tính năng
 1. Giao diện và Trải nghiệm Người dùng
-  - Thiết kế tối giản và thân thiện: Giao diện cần dễ nhìn và không quá phức tạp để người dùng có thể tập trung vào việc tìm kiếm và mua sách.
-  - Thanh tìm kiếm thông minh: Hỗ trợ tìm kiếm theo tiêu đề, tác giả, thể loại 
+  + Thiết kế tối giản và thân thiện: Giao diện cần dễ nhìn và không quá phức tạp để người dùng có thể tập trung vào việc tìm kiếm và mua sách.
+  + Thanh tìm kiếm thông minh: Hỗ trợ tìm kiếm theo tiêu đề, tác giả, thể loại 
 2. Phân loại và Tổ chức Sách
-  - Danh mục rõ ràng: Sắp xếp sách theo thể loại 
+  + Danh mục rõ ràng: Sắp xếp sách theo thể loại 
 3. Tính năng Mua hàng và Thanh toán
-  - Giỏ hàng: Người dùng có thể thêm sách vào giỏ hàng hoặc danh sách yêu thích để mua sau.
-  - Thanh toán đa dạng: Hỗ trợ nhiều phương thức thanh toán như thẻ tín dụng, chuyển khoản, ví điện tử, và thanh toán khi nhận hàng.
-  - Theo dõi đơn hàng: Cho phép người mua theo dõi quá trình vận chuyển và trạng thái đơn hàng.
+  + Giỏ hàng: Người dùng có thể thêm sách vào giỏ hàng hoặc danh sách yêu thích để mua sau.
+  + Thanh toán đa dạng: Hỗ trợ thanh toán chuyển khoản, thanh toán khi nhận hàng.
+  + Theo dõi đơn hàng: Cho phép người mua theo dõi quá trình vận chuyển và trạng thái đơn hàng.
 4. Hỗ trợ Khách hàng
-  -  Hỗ trợ trực tuyến: Để giải đáp các câu hỏi thường gặp và hỗ trợ trực tuyến khi cần.
+  +  Hỗ trợ trực tuyến: Để giải đáp các câu hỏi thường gặp và hỗ trợ trực tuyến khi cần.
 ## Công nghệ sử dụng
 Giao diện: HTML, CSS, JavaScript  
 Cơ sở dữ liệu: MySQL
