@@ -36,17 +36,7 @@
     transition: transform 0.3s ease;
   }
 
-.fas {
-  display: none;
-  position: absolute;
-  top: 80px;
-  left: 0px;
-  font-size: 24px;
-  cursor: pointer;
-  background-color: #f1f1f1;
-  padding: 5px;
-  border-radius: 5px;
-}
+
 /*Slider*/
 #slider {
   position: relative;
@@ -65,7 +55,7 @@
   top: 0;
   left: 100%; 
   width: 100%;
-  height: 300px;
+  height: 400px;
   transition: left 0.5s ease; 
 }
 .active {
@@ -282,12 +272,15 @@
   /* wrapper */
 .wrapper {
     padding: 2rem;
+    display: flex;
+    justify-content: center;
   }
 
   .box{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 90%;
   }
 
 /*Sản phẩm*/
@@ -323,25 +316,57 @@
 }
 
 .cartegory-right-content-item{
-  width: calc(25%-12px);
+  width: 250px;
   text-align: center;
-  padding: 20px;
+  margin: 15px;
 }
 
 .cartegory-right-content-item h1{
-  font-size: 11px;
+  font-size: 20px;
   margin-top: 6px;
-  color: gray;
+  color: rgb(246, 25, 25);
 }
 
 .cartegory-right-content-item img{
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 350px;
 }
 
 .cartegory-right-content-item p{
   font-size: 17px;
 }
+
+/*phân trang*/
+.box_pagination{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.pagination {
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin: 0 4px;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
 
 /* footer */
 
