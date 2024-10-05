@@ -1,13 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.gdđn{
+.gdđn {
     width: 100%;
     height: 100vh;
-    background-image: url(../img/nền.jpg);
+    background-image: url(../images/Ngọc_Trạch.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -17,14 +17,14 @@
 .khunglon {
     position: relative;
     padding: 70px;
-    background-color: rgb(149, 231, 245);
+    background-color: rgba(167, 231, 243, 0.7);
     border: 1px solid transparent;
-    max-width: 530px;
+    max-width: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 500px;
+    height: 550px;
     margin-top: 70px;
     border-radius: 5px;
 }
@@ -36,19 +36,20 @@
     width: 100%;
 }
 
-.x{
+.x {
     width: 100%;
     position: absolute;
     top: 10px;
     left: 10px;
 }
-.x a{
+
+.x a {
     text-decoration: none;
     color: gray;
 }
 
-.thamgiagt{
-    padding-bottom: 10px;
+.thamgiagt {
+    padding-bottom: 20px;
     margin: 10px;
 }
 
@@ -56,95 +57,49 @@
     width: 478px;
     height: 40px;
     display: flex;
-    
 }
-  
-.chu{
-    width: 300px;
+
+.chu {
+    width: 60%;
     text-align: center;
     font-size: x-large;
-    font-weight: bold;
+    font-weight: bolder;
 }
-.quyenloi{
-    width: 300px;
+
+.quyenloi {
+    width: 60%;
     text-align: center;
+    font-size: medium;
 }
 
 .khungbe {
     padding: 0 12px;
 }
 
-.khungfbgg {
+form {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
+    justify-content: center;
     align-items: center;
-}
-
-
-.fb {
-    height: 44px;
-    font-size: large;
-    border-radius: 100px;
-    margin: 4px 0 8px;
+    gap: 15px;
     width: 100%;
-    color: aliceblue;
-    background-color: blue;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
 }
 
-.khungfbgg img{
+form input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
     border-radius: 5px;
-    margin-right: 10px;
-}
-
-.afb{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: aliceblue;
-}
-
-
-.fbgg {
-    border: solid 1.2px grey;
-    background-color: rgb(80, 226, 134);
-}
-
-.gg {
-    color: black;
-}
-
-.agg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-}
-
-.khungOR {
-    display: flex;
-    margin: 8px auto;
-}
-
-.bror {
-    width: 45%;
-    height: 9px;
-    border-bottom: 2px solid rgb(255, 96, 96);
-}
-
-.OR {
-    font-weight: bold;
+    border: 1px solid #ccc;
     font-size: medium;
-    color: rgb(85, 84, 84);
 }
 
-.buttondn{
+form input::placeholder {
+    font-size: small;
+    color: #999;
+}
+
+.buttondn {
     padding: 0 16px;
     cursor: pointer;
     width: 100%;
@@ -157,32 +112,15 @@
     border-radius: 30px;
     font-weight: bold;
     text-decoration: none;
-    position: relative;
-    
 }
 
-button {
-    font-family: var(--primary-font-face);
-}
-
-.quenMK {
-    text-align: center;
-    text-decoration: none;
-    margin-top: 12px;
-    font-size: small;
-}
-.quenMK .blue{
-    color: blue;
-}
-
-.khungdk {
+footer {
     text-align: center;
     margin-top: 16px;
     font-size: medium;
-    display: grid;
 }
 
-.dangki {
+footer .dangki {
     color: red;
     font-weight: bold;
     padding: 0;
@@ -192,11 +130,17 @@ button {
     cursor: pointer;
 }
 
-a{
-
+.quenMK {
+    text-align: center;
     text-decoration: none;
+    margin-top: 12px;
+    font-size: small;
 }
 
-.dangki{
-    color: red;
+.quenMK .blue {
+    color: blue;
+}
+
+a {
+    text-decoration: none;
 }
