@@ -1,0 +1,174 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping-cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/Liên_hệ.css" type="text/css">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <nav>
+            <div class="content-nav">
+                <div class="img-nav">
+                    <img src="images/book_haven.jpg" width="50px" height="50px" />
+                </div>
+                
+                <ul>
+                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="#">Sản Phẩm</a>
+                        <ul>
+                            <li><a href="">Trinh thám & kinh dị</a></li>
+                            <li><a href="">Ngôn tình</a></li>
+                            <li><a href="">Boylove</a></li>
+                            <li><a href="">Kỹ năng</a></li>
+                            <li><a href="">Văn học kinh điển</a></li>
+                            <li><a href="">Manga & Comic</a></li>
+                            <li><a href="">Light Novel</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Liên Hệ</a></li>
+                    <li><a href="#">Giới Thiệu</a></li>
+                </ul>
+                <form>
+                    <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <!-- The Modal -->
+            <button id="cart">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                Giỏ Hàng
+            </button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Giỏ Hàng</h5>
+                        <span class="close">&times;</span>
+                    </div>
+            <div class="modal-body">
+                        
+                <!--Giỏ hàng-->
+                <div class="cart-items">
+                            
+                        <div class="cart-row">
+                        
+                            <div class="cart-item cart-column">
+                                <img class="cart-item-image" src="https://dorahome.info/wp-content/uploads/2022/05/tron-bo-truyen-dai-doremon-24-tap-doc-xuoi-1.jpg">
+                                <span class="cart-item-title">Combo Doraemon tập dài</span>
+                            </div>
+                            <span class="cart-price cart-column">250000đ</span>
+                            <div class="cart-quantity cart-column">
+                                <input class="cart-quantity-input" type="number" value="1">
+                                <button class="btn btn-danger" type="button">Xóa</button>
+                            </div>
+                        </div>
+                        
+                        <div class="cart-row">
+                            <div class="cart-item cart-column">
+                                <img class="cart-item-image" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv27.webp">
+                                <span class="cart-item-title">Shin cậu bé bút chì tập 27</span>
+                            </div>
+                            <span class="cart-price cart-column">25000đ</span>
+                            <div class="cart-quantity cart-column">
+                                <input class="cart-quantity-input" type="number" value="2">
+                                <button class="btn btn-danger" type="button">Xóa</button>
+                            </div>
+                        </div>
+                        <div class="cart-total">
+                            <strong class="cart-total-title">Tổng Cộng:</strong>
+                            <span class="cart-total-price">VNĐ</span>
+                        </div>
+                </div>
+
+            </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                        <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- content -->
+     
+    <section class="wrapper">
+        <div class="left-section">
+            <h2>Liên hệ</h2>
+            <p>Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi, và chúng tôi sẽ liên lạc lại với bạn sớm nhất có thể.</p>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Tên của bạn">
+                </div>
+                <div class="form-group">
+                    
+                    <input type="email" id="email" placeholder="Email của bạn">
+                </div>
+                <div class="form-group">
+                    
+                    <textarea id="comment" rows="4" placeholder="Viết bình luận"></textarea>
+                </div>
+                <button type="submit">Gửi liên hệ</button>
+            </form>
+        </div>
+        <div class="right-section">
+            <h2>Chúng tôi ở đây</h2>
+            <p><strong>Book Haven</strong></p>
+            <p>Công ty Cổ phần Xuất bản và Truyền thông Book Haven</p>
+            <p>
+                <i class="fas fa-map-marker-alt"></i> Here, Hà Nội<br>
+                <i class="fas fa-envelope"></i> bookhaven@gmail.com<br>
+                <i class="fas fa-phone"></i> 0666688889
+            </p>
+        </div>
+    </section>
+    
+
+    <!-- footer -->
+    <footer>
+        <div>
+            <ul class="end">
+                <li>
+                    <ul>
+                        <img src="images/Book Haven (2).png" width="130px" height="130px">
+                    </ul>
+                </li>
+                <li><ul>
+                    <li class="tieu_de">Dịch vụ</li>
+                    <li><a href="">Điều khoản sử dụng</a></li>
+                    <li><a href="">Liên hệ</a></li>
+                    <li><a href="">Hệ thống nhà sách</a></li>
+                </ul></li>
+    
+                <li><ul>
+                    <li class="tieu_de">Hỗ trợ</li>
+                    <li><a href="">Chính sách đổi trả - hoàn tiền</a></li>
+                    <li><a href="">Phương thức vận chuyển</a></li>
+                    <li><a href="">Phương thức thanh toán</a></li>
+                </ul></li>
+    
+                <li><ul>
+                    <li class="tieu_de">Nhà sách bán lẻ</li>
+                    <li>Giám đốc: Tào Thanh Hà | Mai Phương Anh</li>
+                    <li>Địa chỉ: Đại học Phenikaa</li>
+                    <li>Số điện thoại: </li>
+                    <li>Email: </li>
+                    <li>Facebook: </li>
+                </ul></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+    
+
+</html>
