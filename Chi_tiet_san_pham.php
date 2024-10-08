@@ -46,11 +46,11 @@ if ($result->num_rows > 0) {
                 </div>
                 
                 <ul>
-                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="index.php">Trang Chủ</a></li>
                     <li><a href="#">Sản Phẩm</a>
                         <ul>
                             <?php while($row_category = mysqli_fetch_array($spl_category)): ?>
-                                <li><a href="./Phân_loại.html"><?php echo htmlspecialchars($row_category['category_name']); ?></a></li>
+                                <li><a href="./Phân_loại.php"><?php echo htmlspecialchars($row_category['category_name']); ?></a></li>
                             <?php endwhile; ?>
                         </ul>
                     </li>
