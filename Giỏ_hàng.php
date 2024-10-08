@@ -82,6 +82,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         function numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
+        function checkout() {
+            fetch('', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'action=checkout'
+            }).then(() => {
+                window.location.href = 'Thanh_toán.php';
+            });
+        }
     </script>
 </head>
 <body>
@@ -129,6 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="total">
                 Tổng cộng: <span id="total-price"><?php echo number_format($total_price, 0, ',', '.'); ?>₫</span>
             </div>
+
 
             <div class="note">
                 <label for="note">Ghi chú:</label>
