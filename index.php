@@ -55,8 +55,10 @@ include_once('db/connect.php');
         $results = $stmt->get_result();
         $total_books = $results->num_rows;
 
+        // Tính toán số trang
         $total_pages = ceil($total_books / $books_per_page);
 
+        // Lấy dữ liệu cho trang hiện tại
         $stmt->close();
         
         if (!empty($search_keyword)) {
@@ -87,11 +89,11 @@ include_once('db/connect.php');
                 </div>
                 
                 <ul>
-                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="index.php">Trang Chủ</a></li>
                     <li><a href="#">Sản Phẩm</a>
                         <ul>
                             <?php while($row_category = mysqli_fetch_array($spl_category)): ?>
-                            <li><a href="./Phân_loại.html"><?php echo $row_category['category_name']; ?></a></li>
+                            <li><a href="./Phân_loại.php"><?php echo $row_category['category_name']; ?></a></li>
                             <?php endwhile; ?>
                         </ul>
                     </li>
