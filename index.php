@@ -55,10 +55,8 @@ include_once('db/connect.php');
         $results = $stmt->get_result();
         $total_books = $results->num_rows;
 
-        // Tính toán số trang
         $total_pages = ceil($total_books / $books_per_page);
 
-        // Lấy dữ liệu cho trang hiện tại
         $stmt->close();
         
         if (!empty($search_keyword)) {
