@@ -3,20 +3,16 @@
 include_once('db/connect.php');
 
 if (isset($_POST['register'])) {
-    $name = $_POST['name']; // Tên người dùng
-    $email = $_POST['email']; // Email người dùng
-    $phone = $_POST['phone']; // Số điện thoại
-    $password = $_POST['password']; // Mật khẩu
-    $confirmPassword = $_POST['confirmPassword']; // Nhập lại mật khẩu
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirmPassword'];
 
     // Kiểm tra xem mật khẩu có khớp không
     if ($password === $confirmPassword) {
-        // Băm mật khẩu trước khi lưu vào cơ sở dữ liệu
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        // Thêm người dùng vào bảng tbl_user, lưu tên vào trường user
-        $stmt = $mysqli->prepare("INSERT INTO tbl_user (name, email, user, phone, pass) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $name, $email, $name, $phone, $hashedPassword);
+        $stmt = $mysqli->prepare("INSERT INTO tbl_users (name, email, phone, pass) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $name, $email, $phone, $password); // Lưu mật khẩu thẳng vào DB
         
         if ($stmt->execute()) {
             // Đăng ký thành công, có thể chuyển hướng đến trang đăng nhập
@@ -58,6 +54,7 @@ if (isset($_POST['register'])) {
                     <form id="registerForm" method="post" onsubmit="return validateForm()">
                         <input type="text" id="name" name="name" placeholder="Tên" required>
                         <input type="email" id="email" name="email" placeholder="Email" required>
+                        <div class="error" id="email-error" style="display: none; color: red;">Email không hợp lệ.</div>
                         <input type="tel" id="phone" name="phone" placeholder="Số điện thoại" required>
                         <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
                         <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Nhập lại mật khẩu" required>
@@ -65,7 +62,7 @@ if (isset($_POST['register'])) {
                     </form>
                 </div>
                 <footer class="khungdk">
-                    <span>Nếu bạn đã có tài khoản <button class="dangki"><a class="dangki" href="ĐN.html">Đăng nhập</a></button></span>
+                    <span>Nếu bạn đã có tài khoản <button class="dangki"><a class="dangki" href="ĐN.php">Đăng nhập</a></button></span>
                 </footer>
                 <div class="quenMK">
                     By continuing, you agree to Website's <a class="blue" href="">Điều khoản Dịch vụ</a> and <a class="blue" href="">Chính Sách Bảo Mật.</a>
@@ -85,6 +82,15 @@ if (isset($_POST['register'])) {
             }
             
             return true;
+        }
+         // Kiểm tra email
+         const emailValue = emailInput.value;
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        if (!emailRegex.test(emailValue)) {
+            emailError.style.display = 'block';
+            return;
+        } else {
+            emailError.style.display = 'none';
         }
     </script>
 </body>
