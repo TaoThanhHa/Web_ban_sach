@@ -6,22 +6,21 @@ if (isset($_POST['login'])) {
     $pass = $_POST['pass']; // Mật khẩu nhập vào
 
     // Truy vấn để lấy mật khẩu đã lưu và vai trò
-    $stmt = $mysqli->prepare("SELECT pass, role FROM tbl_user WHERE email = ? OR user = ?");
+    $stmt = $mysqli->prepare("SELECT pass, role FROM tbl_users WHERE email = ? OR user = ?");
     $stmt->bind_param("ss", $user, $user);
     $stmt->execute();
     $stmt->store_result();
     
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($hashedPassword, $role);
+        $stmt->bind_result($storedPassword, $role);
         $stmt->fetch();
 
         // So sánh mật khẩu nhập vào với mật khẩu đã lưu
-        if ($pass === $hashedPassword) { // So sánh trực tiếp
-            // Đăng nhập thành công, điều hướng theo vai trò
+        if ($pass === $storedPassword) { 
             if ($role == 1) {
-                header("Location: Admin.html"); // Giao diện cho role 1
+                header("Location: Quản_lý_sách.php"); // Giao diện cho role 1
             } else {
-                header("Location: index.php"); // Giao diện cho role 0
+                header("Location: Trang_chủ.php"); // Giao diện cho role 0
             }
         } else {
             echo "Mật khẩu không chính xác.";
@@ -32,8 +31,6 @@ if (isset($_POST['login'])) {
     $stmt->close();
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -49,19 +46,19 @@ if (isset($_POST['login'])) {
                         <span class="chu">Đăng nhập vào tài khoản của bạn</span>
                     </div>
                     
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-        <div class="chon">
-            <p class="mot">Email hoặc Tên người dùng<span class="sao">*</span></p>
-            <input type="text" id="" name="user" class="tdnemail" required="" value="">
-        </div>
-        <div class="chon">
-            <p class="mot">Mật khẩu<span class="sao">*</span></p>
-            <input type="password" id="" name="pass" class="pass" required="" value="">
-        </div>
-        <button name="login" class="bt">Đăng nhập</button>
-        </form>
+                        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                        <div class="chon">
+                            <p class="mot">Email hoặc Tên người dùng<span class="sao">*</span></p>
+                            <input type="text" id="" name="user" class="tdnemail" required="" value="">
+                        </div>
+                        <div class="chon">
+                            <p class="mot">Mật khẩu<span class="sao">*</span></p>
+                            <input type="password" id="" name="pass" class="pass" required="" value="">
+                        </div>
+                        <button name="login" class="bt">Đăng nhập</button>
+                        </form>
 
-        <div class="qmk">
+                        <div class="qmk">
                         <a href="#">Quên mật khẩu?</a>
                     </div>
                     <div class="back">
@@ -69,7 +66,7 @@ if (isset($_POST['login'])) {
                     </div>
                     <div class="last">
                         Chưa có tài khoản?
-                        <a class="dki" href="/webbansach/ĐK.php">Đăng ký</a>
+                        <a class="dki" href="ĐK.php">Đăng ký</a>
                     </div>
                 </div>
             </div>
