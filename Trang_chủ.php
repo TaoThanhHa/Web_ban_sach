@@ -97,7 +97,7 @@ include_once('db/connect.php');
                             <?php endwhile; ?>
                         </ul>
                     </li>
-                    <li><a href="">Liên Hệ</a></li>
+                    <li><a href="Liên_hệ.html">Liên Hệ</a></li>
                     <li><a href="Giới_thiệu.php">Giới Thiệu</a></li>
                 </ul>
                 <form method="post" action="">
@@ -109,6 +109,10 @@ include_once('db/connect.php');
                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                 Giỏ Hàng
             </button>
+            <ul class="login">
+                <li><a href="./Tai_khoan_khach.html">Tài khoản</a></li>
+            </ul>
+            
         </nav>
     </header>
 
