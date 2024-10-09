@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
             $query = "SELECT * FROM tbl_book ORDER BY RAND() LIMIT 12";
             $result = $mysqli->query($query);
         ?>
-    <header>
+   <header>
         <nav>
             <div class="content-nav">
                 <div class="img-nav">
@@ -46,25 +46,28 @@ if ($result->num_rows > 0) {
                 </div>
                 
                 <ul>
-                    <li><a href="index.php">Trang Chủ</a></li>
+                    <li><a href="Trang_chủ.php">Trang Chủ</a></li>
                     <li><a href="#">Sản Phẩm</a>
                         <ul>
                             <?php while($row_category = mysqli_fetch_array($spl_category)): ?>
-                                <li><a href="./Phân_loại.php"><?php echo htmlspecialchars($row_category['category_name']); ?></a></li>
+                            <li><a href="./Phân_loại.php"><?php echo $row_category['category_name']; ?></a></li>
                             <?php endwhile; ?>
                         </ul>
                     </li>
-                    <li><a href="#">Liên Hệ</a></li>
-                    <li><a href="./Giới_thiệu.php">Giới Thiệu</a></li>
+                    <li><a href="./Liên_hệ.html">Liên Hệ</a></li>
+                    <li><a href="Giới_thiệu.php">Giới Thiệu</a></li>
                 </ul>
+                <form method="post" action="">
+                    <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
             </div>
             <button id="cart">
                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                 Giỏ Hàng
             </button>
             <ul class="login">
-                <li><a href="">Đăng nhập</a></li>
-                <li><a href="">Đăng ký</a></li>
+                <li><a href="./Tai_khoan_khach.html">Tài khoản</a></li>
             </ul>
         </nav>
     </header>
