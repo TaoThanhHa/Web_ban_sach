@@ -97,7 +97,7 @@ include_once('db/connect.php');
                             <?php endwhile; ?>
                         </ul>
                     </li>
-                    <li><a href="Liên_hệ.html">Liên Hệ</a></li>
+                    <li><a href="./Liên_hệ.html">Liên Hệ</a></li>
                     <li><a href="Giới_thiệu.php">Giới Thiệu</a></li>
                 </ul>
                 <form method="post" action="">
