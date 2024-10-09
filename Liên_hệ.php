@@ -1,3 +1,7 @@
+<?php
+include_once('db/connect.php');
+?>
+
 <html>
 
 <head>
@@ -9,11 +13,20 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Liên_hệ.css" type="text/css">
+    <script>
+        document.getElementById('cart').addEventListener('click', function() {
+        window.location.href = 'Giỏ_hàng.php';
+        });
+    </script>
 </head>
 
 <body>
-    <!-- header -->
-    <header>
+        <?php
+            // Truy vấn để lấy category
+            $spl_category = mysqli_query($mysqli, 'SELECT * FROM tbl_category ORDER BY category_id DESC');
+        ?>
+   <!-- header -->
+   <header>
         <nav>
             <div class="content-nav">
                 <div class="img-nav">
@@ -21,83 +34,33 @@
                 </div>
                 
                 <ul>
-                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="index.php">Trang Chủ</a></li>
                     <li><a href="#">Sản Phẩm</a>
                         <ul>
-                            <li><a href="">Trinh thám & kinh dị</a></li>
-                            <li><a href="">Ngôn tình</a></li>
-                            <li><a href="">Boylove</a></li>
-                            <li><a href="">Kỹ năng</a></li>
-                            <li><a href="">Văn học kinh điển</a></li>
-                            <li><a href="">Manga & Comic</a></li>
-                            <li><a href="">Light Novel</a></li>
+                            <?php while($row_category = mysqli_fetch_array($spl_category)): ?>
+                            <li><a href="./Phân_loại.html"><?php echo $row_category['category_name']; ?></a></li>
+                            <?php endwhile; ?>
                         </ul>
                     </li>
-                    <li><a href="#">Liên Hệ</a></li>
-                    <li><a href="#">Giới Thiệu</a></li>
+                    <li><a href="">Liên Hệ</a></li>
+                    <li><a href="Giới_thiệu.php">Giới Thiệu</a></li>
                 </ul>
-                <form>
+                <form method="post" action="">
                     <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
             </div>
-            <!-- The Modal -->
             <button id="cart">
                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                 Giỏ Hàng
             </button>
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Giỏ Hàng</h5>
-                        <span class="close">&times;</span>
-                    </div>
-            <div class="modal-body">
-                        
-                <!--Giỏ hàng-->
-                <div class="cart-items">
-                            
-                        <div class="cart-row">
-                        
-                            <div class="cart-item cart-column">
-                                <img class="cart-item-image" src="https://dorahome.info/wp-content/uploads/2022/05/tron-bo-truyen-dai-doremon-24-tap-doc-xuoi-1.jpg">
-                                <span class="cart-item-title">Combo Doraemon tập dài</span>
-                            </div>
-                            <span class="cart-price cart-column">250000đ</span>
-                            <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="1">
-                                <button class="btn btn-danger" type="button">Xóa</button>
-                            </div>
-                        </div>
-                        
-                        <div class="cart-row">
-                            <div class="cart-item cart-column">
-                                <img class="cart-item-image" src="https://stbhatay.com.vn/wp-content/uploads/2023/02/sv27.webp">
-                                <span class="cart-item-title">Shin cậu bé bút chì tập 27</span>
-                            </div>
-                            <span class="cart-price cart-column">25000đ</span>
-                            <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="2">
-                                <button class="btn btn-danger" type="button">Xóa</button>
-                            </div>
-                        </div>
-                        <div class="cart-total">
-                            <strong class="cart-total-title">Tổng Cộng:</strong>
-                            <span class="cart-total-price">VNĐ</span>
-                        </div>
-                </div>
-
-            </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary close-footer">Đóng</button>
-                        <button type="button" class="btn btn-primary order">Thanh Toán</button>
-                    </div>
-                </div>
-            </div>
+            <ul class="login">
+                <li><a href="">Đăng nhập</a></li>
+                <li><a href="">Đăng ký</a></li>
+            </ul>
         </nav>
-
     </header>
+
 
     <!-- content -->
      
