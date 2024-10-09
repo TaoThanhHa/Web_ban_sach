@@ -110,8 +110,8 @@ include_once('db/connect.php');
                 Giỏ Hàng
             </button>
             <ul class="login">
-                <li><a href="">Đăng nhập</a></li>
-                <li><a href="">Đăng ký</a></li>
+                <li><a href="ĐN.php">Đăng nhập</a></li>
+                <li><a href="ĐK.php">Đăng ký</a></li>
             </ul>
         </nav>
     </header>
